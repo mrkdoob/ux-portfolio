@@ -1,0 +1,101 @@
+html(lang="en")
+    head
+        title Page title
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="preconnect", href="https://fonts.gstatic.com")
+        link(href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="css/tailwind/tailwind.min.css")
+        link(rel="icon", type="image/png", sizes="32x32", href="shuffle-for-tailwind.png")
+        script(src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js", defer="defer")
+    body(class="antialiased bg-body text-body font-body")
+        div(class="")
+            section(x-data="{ mobileNavOpen: false }", class="")
+                nav(class="bg-coolGray-50")
+                    div(class="container mx-auto px-4")
+                        div(class="flex h-24 items-center")
+                            a(class="inline-block", href="#")
+                                img(class="h-6", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen", class="lg:hidden py-1 ml-auto")
+                                svg(width="44", height="16", viewbox="0 0 44 16", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    rect(width="44", height="2", rx="1", fill="black")
+                                    rect(y="14", width="44", height="2", rx="1", fill="black")
+                            div(class="hidden lg:flex ml-auto mr-12 items-center")
+                                a(class="inline-block hover:underline mr-10", href="index.html") Projects
+                                a(class="inline-block hover:underline mr-10", href="about.html") About
+                div(:class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}", class="hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50")
+                    div(x-on:click="mobileNavOpen = !mobileNavOpen", class="fixed inset-0 bg-gray-800 opacity-50")
+                    nav(class="relative flex flex-col py-6 px-10 w-full h-full bg-white overflow-y-auto")
+                        div(class="flex mb-auto items-center")
+                            a(class="inline-block mr-auto", href="#")
+                                img(class="h-4", src="asitrastudio-assets/logos/logo-asi.svg", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen")
+                                svg(width="24", height="24", viewbox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M6 18L18 6M6 6L18 18", stroke="#111827", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                        div(class="py-12 mb-auto")
+                            ul(class="flex-col")
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") Projects
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") About
+                        div
+                            a(class="block mb-3 px-4 py-4 text-center font-medium text-black hover:text-white border border-black hover:bg-black rounded-full transition duration-200", href="#") Login
+                            a(class="block px-4 py-4 text-center font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-full transition duration-200", href="#") Sign in
+            section(class="relative py-10 bg-coolGray-50 overflow-hidden", x-data="{ mobileNavOpen: false }")
+                div(class="container mx-auto px-4")
+                    div(class="flex flex-wrap -mx-4")
+                        div(class="w-full px-4 mb-6 lg:mb-0")
+                            div(class="flex flex-col md:flex-row justify-center py-24 px-10 h-fit bg-white rounded-4xl")
+                                div(class="md:w-1/2")
+                                    h1(class="max-w-xs md:max-w-md font-heading text-2xl sm:text-4xl mb-4 tracking-tighter") Hi! I'm Mark.
+                                    div(class="max-w-sm")
+                                        p UX Designer with a passion for user-centered design.
+                                        p(class="mt-2") My critical eye for detail may be a hassle at home—sorry, family—but it’s perfect for crafting user experiences.
+                                        p(class="mt-2") Outdoors, you’ll find me running, cycling, or walking. Indoors, I enjoy stand-up comedy, playing the handpan, and practicing yoga.
+                                        p(class="mt-2") My full-stack development background helps me estimate feature costs and align design with business needs, balancing innovation with practicality.
+                                        a(class="mt-8 inline-flex mb-3 items-center text-black", href="https://www.linkedin.com/in/mark-van-der-laan-335b962b5/")
+                                            svg(width="14", height="14", viewbox="0 0 14 14", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M13.1004 13.0993V8.30161C13.1004 5.94368 12.5928 4.14249 9.84186 4.14249C8.51552 4.14249 7.6313 4.86297 7.27106 5.55069H7.23831V4.35536H4.63477V13.0993H7.35294V8.7601C7.35294 7.61388 7.5658 6.51679 8.97401 6.51679C10.3658 6.51679 10.3822 7.81038 10.3822 8.8256V13.083H13.1004V13.0993Z", fill="currentColor")
+                                                path(d="M0.212891 4.35538H2.93106V13.0994H0.212891V4.35538Z", fill="currentColor")
+                                                path(d="M1.57195 -9.15527e-05C0.704104 -9.15527e-05 0 0.704012 0 1.57186C0 2.43971 0.704104 3.16019 1.57195 3.16019C2.4398 3.16019 3.14391 2.43971 3.14391 1.57186C3.14391 0.704012 2.4398 -9.15527e-05 1.57195 -9.15527e-05Z", fill="currentColor")
+                                            span(class="ml-3 text-sm") Linkedin
+                                div(class="w-full md:w-1/3 px-4 flex content-center")
+                                    div(class="relative h-full")
+                                        img(class="block h-full w-full rounded-4xl object-cover", src="images/mark-jpg-1717834884363.webp", alt="")
+                div(:class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}", class="hidden fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50")
+                    div(x-on:click="mobileNavOpen = !mobileNavOpen", class="fixed inset-0 bg-gray-800 opacity-50")
+                    nav(class="relative flex flex-col py-6 px-10 w-full h-full bg-white overflow-y-auto")
+                        div(class="flex mb-auto items-center")
+                            a(class="inline-block mr-auto", href="#")
+                                img(class="h-4", src="asitrastudio-assets/logos/logo-asi.svg", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen")
+                                svg(width="24", height="24", viewbox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M6 18L18 6M6 6L18 18", stroke="#111827", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                        div(class="py-12 mb-auto")
+                            ul(class="flex-col")
+                                li(class="mb-6")
+                                    a(class="inline-block text-black", href="#") About
+                                li(class="mb-6")
+                                    a(class="inline-block text-black", href="#") Services
+                                li(class="mb-6")
+                                    a(class="inline-block text-black", href="#") Projects
+                                li
+                                    a(class="inline-block text-black", href="#") Contact us
+                        div
+                            a(class="block mb-3 px-4 py-4 text-center font-medium text-black hover:text-white border border-black hover:bg-black rounded-full transition duration-200", href="#") Login
+                            a(class="block px-4 py-4 text-center font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-full transition duration-200", href="#") Sign in
+            section(class="pt-12 md:pt-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg text-center mx-auto mb-20")
+                        h2(class="font-heading text-5xl xs:text-6xl sm:text-7xl tracking-tight mb-8") Resume
+                    div(class="flex flex-wrap md:flex-nowrap gap-8 justify-center w-full")
+                        img(class="rounded-3xl w-full md:w-1/2 h-auto mx-auto", src="images/cv-front-final.png", alt="")
+                        img(class="rounded-3xl block w-full md:w-1/2 h-auto mx-auto", src="images/cv-back-final.png", alt="")
+                    div(class="p-16 w-full flex justify-center")
+                        a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black", href="https://drive.google.com/file/d/1noMwqbODsNJWzFUhN1_hteqDwB3yqxbK/view?usp=sharing", target="_blank")
+                            span(class="mr-4") Download
+                            |               
+                            span(class="group-hover:rotate-45 transform transition duration-100")
+                                svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                    path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
