@@ -1,0 +1,811 @@
+html(lang="en")
+    head
+        title Page title
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="preconnect", href="https://fonts.gstatic.com")
+        link(href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="css/tailwind/tailwind.min.css")
+        link(rel="icon", type="image/png", sizes="32x32", href="shuffle-for-tailwind.png")
+        script(src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js", defer="defer")
+    body(class="antialiased bg-body text-body font-body")
+        div(class="")
+            section(x-data="{ mobileNavOpen: false }", class="")
+                nav(class="bg-coolGray-50")
+                    div(class="container mx-auto px-4")
+                        div(class="flex h-24 items-center")
+                            a(class="inline-block", href="#")
+                                img(class="h-6", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen", class="lg:hidden py-1 ml-auto")
+                                svg(width="44", height="16", viewbox="0 0 44 16", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    rect(width="44", height="2", rx="1", fill="black")
+                                    rect(y="14", width="44", height="2", rx="1", fill="black")
+                            div(class="hidden lg:flex ml-auto mr-12 items-center")
+                                a(class="inline-block hover:underline mr-10", href="index.html") Projects
+                                a(class="inline-block hover:underline mr-10", href="about.html") About
+                div(:class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}", class="fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50 hidden")
+                    div(x-on:click="mobileNavOpen = !mobileNavOpen", class="fixed inset-0 bg-gray-800 opacity-50")
+                    nav(class="relative flex flex-col py-6 px-10 w-full h-full bg-coolGray-50 overflow-y-auto")
+                        div(class="flex mb-auto items-center")
+                            a(class="inline-block mr-auto", href="#")
+                                img(class="h-4", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen")
+                                svg(width="24", height="24", viewbox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M6 18L18 6M6 6L18 18", stroke="#111827", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                        div(class="py-12 mb-auto")
+                            ul(class="flex-col")
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") Projects
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") About
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-4xl sm:text-4xl mb-8") Therapy Hub
+                                    p(class="text-lg mb-2 font-medium") Challenge
+                                    p(class="text-md mb-8") Many individuals seeking therapy face inefficiencies such as time-consuming back-and-forth communications to schedule appointments, difficulty finding therapists with the right specialization. These issues create barriers to accessing timely and effective mental health support, leaving individuals feeling frustrated and underserved.
+                                    p(class="text-lg mb-2 font-medium") Solution
+                                    p(class="text-md") I designed the therapy booking platform to streamline the process of finding and scheduling appointments with therapists. The platform offers an intuitive online booking system, immediate appointment confirmations, and filters to match users with therapists based on their specific needs.
+                            div(class="w-full lg:w-1/2 px-4 rounded-2xl")
+                                img(class="rounded-4xl block lg:ml-auto", src="images/therapyHubMac.png", alt="")
+            section(class="relative bg-coolGray-50 overflow-hidden pt-16", x-data="{ activeSlide: 1, slideCount: 3 }")
+                div(class="container mx-auto px-4 pt-16", x-data="{ activeSlide: 1, slideCount: 4 }")
+                    div(class="flex flex-wrap -mx-4 items-center mb-8")
+                        div(class="w-full md:w-1/2 px-4 md:mb-0")
+                            h1(class="font-heading text-4xl md:text-4xl tracking-tighter mb-4") User research & personas
+                            p(class="text-md") I interviewed both clients and therapists to gather more insights on user needs and problems.
+                            p(class="text-md") The interviews aim to understand users' motivations, goals, and experiences with booking a therapist, identifying key features, preferences, and limitations in current offerings. It also seeks to uncover desired improvements and the overall impact of these tools on users' personal growth and daily habits.
+                        div(class="w-full md:w-1/2 px-4")
+                            div(class="flex items-center justify-end")
+                                button(class="inline-flex h-16 sm:h-18 w-16 sm:w-18 mr-8 items-center justify-center text-black hover:text-white hover:bg-black border border-black rounded-full transition duration-200", x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount")
+                                    svg(width="27", height="27", viewbox="0 0 27 27", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M10.7051 7.12817L4.15732 13.6759L10.7051 20.2237", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M22.4941 13.6759H4.33949", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                button(class="inline-flex h-16 sm:h-18 w-16 sm:w-18 items-center justify-center text-black hover:text-white hover:bg-black border border-black rounded-full transition duration-200", x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1")
+                                    svg(width="27", height="27", viewbox="0 0 27 27", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M16.2949 7.12817L22.8427 13.6759L16.2949 20.2237", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M4.50586 13.6759H22.6605", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                    div(class="overflow-hidden relative")
+                        div(class="flex transition-transform duration-500 ease-in-out", :style="'transform: translateX(-' + (activeSlide - 1) * 100 + '%)'", style="transform: translateX(-0%)")
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-full relative")
+                                            img(class="block h-1/3 w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/jordanLee.jpeg", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Jordan Lee
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 29
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Software Developer
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Seeking Therapy For:
+                                                    p(class="inline-block") Stress management and work-life balance
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Location:
+                                                    p(class="inline-block") San Francisco, California
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "I need quick and effective tools to help me stay balanced and focused in my hectic life."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Find a Therapist Specializing in Tech-Related Stress:
+                                                            |                               Jordan wants to manage work-related stress more effectively and is looking for a therapist who understands the unique pressures of the tech industry.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Access Flexible Scheduling:
+                                                            |                               With a demanding job, Jordan values flexible scheduling to accommodate work commitments.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Utilize Easy and Intimidation-Free Booking:
+                                                            |                               Preferring to avoid phone calls, Jordan seeks a straightforward, online booking process that offers immediate confirmation.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Difficulty Finding Available Specialists:
+                                                            |                               Jordan struggles to find therapists accepting new clients who also have expertise in managing tech-related stress.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Intimidating Initial Contact:
+                                                            |                               The prospect of making the first call or sending an email to book an appointment is daunting.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Complex Booking Systems:
+                                                            |                               Encountering unclear or complicated booking systems online adds to the stress of seeking therapy.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Anxiety Over Confirmation Wait Times:
+                                                            |                               The delay between booking and receiving confirmation for appointments causes unnecessary anxiety.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Lack of Information for New Clients:
+                                                            |                               As a first-time therapy client, Jordan feels overwhelmed and unsure of what to expect from the therapy process.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Technological Needs:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Intuitive Online Booking Platform:
+                                                            |                               A user-friendly website that allows for easy appointment booking, immediate confirmation, and straightforward rescheduling options.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Informational Resources:
+                                                            |                               Accessible guides, FAQs, or introductory videos that outline what new clients can expect from therapy, specifically addressing concerns relevant to tech professionals.
+                                                            |                             
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-full relative")
+                                            img(class="block h-1/3 w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/lunithMagda.jpeg", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Lunith Magda
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 37
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Data analist
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Seeking Therapy For:
+                                                    p(class="inline-block") Social/phone anxiety
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Location:
+                                                    p(class="inline-block") Dublin, Ireland
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "I want specialized therapy for a specific problem"
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Manage Phone Anxiety:
+                                                            |                               Deal with phone anxiety through effective therapy.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Find a Compatible Therapist:
+                                                            |                               Locate a therapist who fits specific needs and preferences.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Flexible Scheduling:
+                                                            |                               Schedule appointments that fit her availability without time-consuming processes.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Availability Mismatch:
+                                                            |                               Difficulty in finding therapists whose availability matches her schedule.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Skill Mismatch:
+                                                            |                               Difficulty in finding therapists who specialize in her specific problem.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Time-Consuming Communication:
+                                                            |                               Annoyed by the back-and-forth emailing and calling required to book appointments.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Lack of Initial Connection:
+                                                            |                               Prefers to hear the therapist's voice or see a video before booking to build trust.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Online Research:
+                                                            |                               Goes online to find and research therapists.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Values Convenience:
+                                                            |                               Looks for easy and straightforward booking processes.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Easy and Intuitive Booking:
+                                                            |                               A streamlined, booking process that offers immediate confirmation.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Initial Connection:
+                                                            |                               Prefers an introductory video or audio from the therapist to build initial trust.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Accessible Information:
+                                                            |                               Clear information about therapist availability and specialties.
+                                                            |                             
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-full relative")
+                                            img(class="block h-1/3 w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/saraBogen.jpeg", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Sara van Bogen
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Job Title:
+                                                    p(class="inline-block") Psychotherapist
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 30 years
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Location:
+                                                    p(class="inline-block") Dublin
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "There must be a more efficient way to manage my appointments and client information."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Streamline Scheduling:
+                                                            |                               Reduce administrative tasks by making scheduling more efficient.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Centralize Client Management:
+                                                            |                               Better organization and access to client information.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Seamless Integration:
+                                                            |                               Integrate with existing EHR and billing systems.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Ensure Security:
+                                                            |                               Maintain robust security for client data.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Enhance Client Interaction:
+                                                            |                               Provide easy appointment booking and resource access for clients.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Challenges:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Time-consuming Scheduling:
+                                                            |                               Scheduling via phone calls is time-consuming.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Lack of Integration:
+                                                            |                               Operational inefficiency due to lack of integration.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Disappearing Appointments:
+                                                            |                               Risk to reputation from disappearing appointments.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Security Concerns:
+                                                            |                               Current free tools are not secure enough.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Overwhelming Administrative Tasks:
+                                                            |                               Diverting focus from client care.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Reviews Calendar Daily:
+                                                            |                               Prepares for client sessions by reviewing the calendar.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Manages Information Manually:
+                                                            |                               Uses Word documents for client information and session notes.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Schedules Follow-ups:
+                                                            |                               Schedules follow-up appointments at the end of sessions or through text, email, or phone.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Uses Free Tools:
+                                                            |                               Despite concerns, uses free tools for managing client data.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Efficient Scheduling:
+                                                            |                               A more efficient way to schedule appointments.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Integrated Tools:
+                                                            |                               Integration with EHR and billing systems.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Secure Systems:
+                                                            |                               A secure system to protect client data.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Reduced Administrative Work:
+                                                            |                               Minimized administrative tasks to focus more on client care.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Enhanced Client Interaction:
+                                                            |                               Better tools for client interaction, such as easy appointment booking and resource access.
+                                                            |                             
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Ideation
+                        p(class="text-md md:w-1/2") During this phase I created problem-, hypothesis-, goal-statements and userjourneys. By combining this information with a competition audit, I selected 4 main ideas after a few cycles of using the Crazy 8's and HWW method.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Competitor audit
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Competitors’ Strengths
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    span(class="font-medium") Calendesk
+                                                                    |                                   : Clear design, good service structure, automated scheduling, website builder.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") TherapyAppointment
+                                                                    |                                   : Outstanding UX, tailored for mental health professionals, HIPAA-compliant, robust features.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Fresha
+                                                                    |                                   : Modern design, comprehensive management for salons, user-friendly platform.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Acuity Scheduling
+                                                                    |                                   : Streamlines operations, customizable scheduling, workflow automation, secure payments.
+                                                                    |                                 
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Competitors’ Weaknesses
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    span(class="font-medium") Calendesk
+                                                                    |                                   : Overwhelming information, limited customization, unclear brand message.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") TherapyAppointment
+                                                                    |                                   : Shows unavailable therapists, overwhelming interface, limited embedding options.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Fresha
+                                                                    |                                   : Mismatched search results, tedious reselecting services, limited integration.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Acuity
+                                                                    |                                   : Platform dependency, cluttered interface, potential double bookings.
+                                                                    |                                 
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Gaps
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Lack of customization and integration options.
+                                                                li Complex navigation and overwhelming interfaces.
+                                                                li Lack of filtering on location/online/offline.
+                                                                li Lack of filtering on specific needs.
+                                                                li Lack of intuitive onboarding.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Opportunities
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Develop enhanced customization and integration features.
+                                                                li Create a more intuitive and user-friendly platform.
+                                                                li Create a platform that offers both online and offline options and filter on location more effectively.
+                                                                li Create a platform that allows to filter on specific needs.
+                                                                li Create a more user-friendly and intuitive onboarding without it being too time consuming.
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Goal statements
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 1 for Clients Seeking Therapy for Specific Needs
+                                                            p
+                                                                |                                 Our client scheduling platform will let individuals seeking therapy for specific needs
+                                                                |                                 
+                                                                span(class="font-medium") book sessions directly online
+                                                                |                                 , providing a more efficient and tailored experience. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") tracking the number of bookings made through the platform and client satisfaction with the ease of finding a therapist that fits their specific needs
+                                                                |                                 .
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 2 for Clients Seeking Intuitive Direct Booking
+                                                            p
+                                                                |                                 Our client scheduling platform will let individuals
+                                                                |                                 
+                                                                span(class="font-medium") book therapy sessions through an intuitive and direct booking process
+                                                                |                                 , either online or offline, ensuring a seamless experience. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") tracking the increase in bookings made through the platform and client feedback on the booking experience
+                                                                |                                 .
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 3 for Therapists like Sara
+                                                            p
+                                                                |                                 Our client scheduling platform will
+                                                                |                                 
+                                                                span(class="font-medium") significantly reduce the time therapists spend on manually contacting clients and administrative tasks
+                                                                |                                 by streamlining the process of receiving bookings. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") tracking the reduction in administrative time for therapists and the decrease in booking and scheduling errors
+                                                                |                                 .
+                                                                |                               
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Chosen ideas
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Efficient Online Booking
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li View real-time therapist availability and book sessions directly.
+                                                                li Instant booking confirmations.
+                                                                li Schedule based on preferred therapist or based on your own schedule.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Specialized Therapist Matching
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Find therapists based on specific needs like anxiety or depression.
+                                                                li Advanced filtering and personalized therapist recommendations.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Hybrid Online and Offline Booking
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Search for therapists based on location for in-person or virtual sessions.
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Lo-Fi Prototyping
+                        p(class="text-md w-1/2") During this phase I created a variety of user flows for different screens, paper and digital wireframes that are connected together to form a prototype using Figma.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") User Flow
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-180")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="height: 488px")
+                                            div(class="max-w-full")
+                                                div(class="container px-4")
+                                                    div(class="w-full")
+                                                        div(class="p-4 mb-4")
+                                                            p I created a userflow for the booking process:
+                                                            img(class="rounded-xl mt-4 block w-1/2 h-100 object-fit", src="images/userFlow.jpeg", alt="")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") Paper wireframes
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="flex flex-wrap md:flex-nowrap gap-8 w-full")
+                                                    img(class="overflow-hidden rounded-xl mt-4 block w-full md:w-1/2 h-166 object-cover", src="images/paperWFTherapyHub2.jpg", alt="")
+                                                    img(class="overflow-hidden rounded-xl mt-4 block w-full md:w-1/2 h-166 object-cover", src="images/paperWFTherapyHub.jpg", alt="")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Wireframes
+                    img(class="rounded-5xl block w-full h-full object-cover", src="images/wireframesTherapyHub.png", alt="Wireframes")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-2xl sm:text-4xl mb-4") Lo-Fi prototype
+                                    p(class="mb-10") After sketching wireframes on paper and turning them into digital ones in Figma, they got glued together as Lo-Fi prototype using Figma as well.
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/bas4KhsJ1ll8o5G2UvQMPV/Therapy-booking?node-id=0-1&t=jvJesvxFp1Tfmwjh-1", target="_blank")
+                                        span(class="mr-4") View Wireframes
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                    |                   
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black", href="https://www.figma.com/proto/bas4KhsJ1ll8o5G2UvQMPV/Therapy-booking?node-id=1-2&t=jvJesvxFp1Tfmwjh-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2", target="_blank")
+                                        span(class="mr-4") View Prototype
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                            div(class="w-full h-full lg:w-1/2 m-auto")
+                                div(style="padding:71.11% 0 0 0;position:relative;")
+                                    iframe(src="https://player.vimeo.com/video/954712024?badge=0&autopause=0&player_id=0&app_id=58479", frameborder="0", allow="autoplay; fullscreen; picture-in-picture; clipboard-write", style="position:absolute;top:0;left:0;width:100%;height:100%;", title="LoFiPrototypeTherapyHub")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Usability study
+                        p(class="text-md w-1/2") During this phase I did an unmoderated usability study to discover what can be improved and if user's are able to use the main features of the app without much difficulty.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Affinity diagram
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    p All results from the usability study were put on notes and divided into themes by creating an affinity diagram.
+                                                    a(class="my-4 group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/board/uDruY2w5exyBOzMhzTr279/Therapy-app-affinity-diagram?node-id=0-1&t=tiCsITpuZWabuKrR-1", target="_blank")
+                                                        span(class="mr-4") View in Figma
+                                                        |                             
+                                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                    img(class="rounded-xl mt-4 block w-full h-118 object-cover", src="images/affinityTherapyHubSmall.png", alt="")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Pattern Identification
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-180")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="height: 367px")
+                                            div(class="max-w-full")
+                                                div(class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4")
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Session Location
+                                                        p 3 out of 3 participants were confused about where the sessions take place, indicating that the information about location is difficult to find or missing.
+                                                        p(class="font-medium") Solution: Make session location information more prominent and easy to locate.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Pricing and Payment
+                                                        p 2 out of 3 participants were confused about pricing and payment, suggesting that this information is difficult to find or missing.
+                                                        p(class="font-medium") Solution: Provide clear and accessible information about pricing and payment options.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Booking Progress
+                                                        p 1 out of 3 participants wanted to know the progress of their booking, indicating that information about booking completion or progress is difficult to find or missing.
+                                                        p(class="font-medium") Solution: Implement a booking progress tracker to keep users informed.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Flexible Timeslots
+                                                        p 1 out of 3 participants desired more flexible timeslots, suggesting that the ability to choose different times is missing.
+                                                        p(class="font-medium") Solution: Offer a wider range of timeslots to accommodate user preferences.
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Insights & Priority
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="grid grid-cols-1 md:grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 0 (P0)
+                                                            h3(class="text-md font-medium mb-2") Session Location
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more information about the location of a session.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 Without information about location, users will most likely not complete the booking process.
+                                                                |                               
+                                                            h3(class="text-md font-medium mt-4 mb-2") Pricing and Payment
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more information about the pricing and payment options.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 Without information about pricing, users will most likely not complete the booking process.
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 1 (P1)
+                                                            h3(class="text-md font-medium mb-2") Booking Progress
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users want more information about the completion status of their booking.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 Information about the status helps users know what to expect and prevents them from quitting their onboarding early due to being frustrated about the duration.
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 2 (P2)
+                                                            h3(class="text-md font-medium mb-2") Flexible Timeslots
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users want a way to change the fixed timeslots.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 A more flexible input to choose timeslots will allows users to accommodate to their needs as busy proffesionals are often restricted in their agenda.
+                                                                |                               
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Before & After
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="grid grid-cols-1 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Session Location
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more information about the location of a session.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Show online and in-person options for therapy. Implement a feature to search and sort therapists by location for in-person sessions.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/locationBefore.gif", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/locationAfter.gif", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Pricing and Payment
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more information about the pricing and payment options.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Include pricing information in the booking process, such as showing it when selecting a date and time.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/priceBefore.png", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/priceAfter.png", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Booking Progress
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users want more information about the completion status of their booking.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Include a progress/status bar that shows how far the user is in the booking process.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/completionBefore.png", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/completionAfter.png", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Flexible Timeslots
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users want a way to change the fixed timeslots.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Allow users to select from a wider variety of timeslots.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/timeBefore.png", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/timeAfter.png", alt="")
+                                                    a(class="p-4 ml-8 group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=156-7534&t=GpEUZBajhtktF9RY-1", target="_blank")
+                                                        span(class="mr-4") View in Figma
+                                                        |                             
+                                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Mockups
+                    img(class="rounded-5xl block w-full h-full object-cover", src="images/mockupsTherapyHub2.png", alt="Wireframes")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-2xl sm:text-4xl mb-4") Hi-Fi prototype
+                                    p(class="mb-10") After implementing all improvements in our wireframes, it was time to finally create the mockups and Hi-Fi prototype.
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/bas4KhsJ1ll8o5G2UvQMPV/Therapy-booking?node-id=85-1319&t=jvJesvxFp1Tfmwjh-1", target="_blank")
+                                        span(class="mr-4") View Mockups
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                    |                   
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black", href="https://www.figma.com/proto/bas4KhsJ1ll8o5G2UvQMPV/Therapy-booking?node-id=85-1668&t=LangexV9ug445eED-0&scaling=min-zoom&page-id=85%3A1319&starting-point-node-id=85%3A1668", target="_blank")
+                                        span(class="mr-4") View Prototype
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                            div(class="w-full h-full lg:w-1/2 m-auto")
+                                div(style="padding:71.11% 0 0 0;position:relative;")
+                                    iframe(src="https://player.vimeo.com/video/954689221?badge=0&autopause=0&player_id=0&app_id=58479", frameborder="0", allow="autoplay; fullscreen; picture-in-picture; clipboard-write", style="position:absolute;top:0;left:0;width:100%;height:100%;", title="HiFi Therapy Hub Online flow")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full h-full lg:w-1/2 m-auto")
+                                div(style="padding:71.11% 0 0 0;position:relative;")
+                                    iframe(src="https://player.vimeo.com/video/954692509?badge=0&autopause=0&player_id=0&app_id=58479", frameborder="0", allow="autoplay; fullscreen; picture-in-picture; clipboard-write", style="position:absolute;top:0;left:0;width:100%;height:100%;", title="HiFi Therapy In-Person Flow")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md pl-16")
+                                    h2(class="lg:max-w-md text-2xl sm:text-4xl mb-4") In-Person flow
+                                    p(class="mb-10") Here is one more recording of the in-person therapy booking process.
+            section(class="bg-coolGray-50 pt-20")
+                div(class="relative py-36 bg-black overflow-hidden")
+                    img(class="absolute top-0 left-0 w-full h-full object-cover", src="images/CTAbackground2.jpg", alt="")
+                    div(class="relative container mx-auto px-4")
+                        div(class="lg:max-w-3xl mx-auto text-center")
+                            h1(class="font-heading text-5xl sm:text-8xl xl:text-10xl text-gray-700 tracking-tighter mb-14") Thanks for reading!
+                            a(class="group inline-flex mb-3 sm:mb-0 sm:mr-4 py-5 px-8 text-black hover:text-white leading-none items-center justify-center bg-white hover:bg-green-400 rounded-full transition duration-150", href="index.html")
+                                span(class="mr-2.5") More work
+                                |                 
+                                span(class="group-hover:rotate-45 transform transition duration-75")
+                                    svg(width="10", height="11", viewbox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9 1.5L1 9.5", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M9 8.83571V1.5H1.66429", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")

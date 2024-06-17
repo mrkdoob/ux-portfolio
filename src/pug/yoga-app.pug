@@ -1,0 +1,1122 @@
+html(lang="en")
+    head
+        title Page title
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="preconnect", href="https://fonts.gstatic.com")
+        link(href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="css/tailwind/tailwind.min.css")
+        link(rel="icon", type="image/png", sizes="32x32", href="shuffle-for-tailwind.png")
+        script(src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js", defer="defer")
+    body(class="antialiased bg-body text-body font-body")
+        div(class="")
+            section(x-data="{ mobileNavOpen: false }", class="")
+                nav(class="bg-coolGray-50")
+                    div(class="container mx-auto px-4")
+                        div(class="flex h-24 items-center")
+                            a(class="inline-block", href="#")
+                                img(class="h-6", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen", class="lg:hidden py-1 ml-auto")
+                                svg(width="44", height="16", viewbox="0 0 44 16", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    rect(width="44", height="2", rx="1", fill="black")
+                                    rect(y="14", width="44", height="2", rx="1", fill="black")
+                            div(class="hidden lg:flex ml-auto mr-12 items-center")
+                                a(class="inline-block hover:underline mr-10", href="index.html") Projects
+                                a(class="inline-block hover:underline mr-10", href="about.html") About
+                div(:class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}", class="fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50 hidden")
+                    div(x-on:click="mobileNavOpen = !mobileNavOpen", class="fixed inset-0 bg-gray-800 opacity-50")
+                    nav(class="relative flex flex-col py-6 px-10 w-full h-full bg-coolGray-50 overflow-y-auto")
+                        div(class="flex mb-auto items-center")
+                            a(class="inline-block mr-auto", href="#")
+                                img(class="h-4", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen")
+                                svg(width="24", height="24", viewbox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M6 18L18 6M6 6L18 18", stroke="#111827", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                        div(class="py-12 mb-auto")
+                            ul(class="flex-col")
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") Projects
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") About
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-4xl sm:text-4xl mb-8") Yoga Hub
+                                    p(class="text-lg mb-2 font-medium") Challenge
+                                    p(class="text-md mb-8") Many individuals struggle to maintain consistent wellness routines due to busy schedules, varying energy levels, and specific physical or mental health challenges. Existing wellness apps often lack personalized guidance and community support, leaving users feeling isolated and have their needs unmet.
+                                    p(class="text-lg mb-2 font-medium") Solution
+                                    p(class="text-md") I designed the yoga & meditation app to provide personalized and adaptable wellness experiences. By offering customized practices based on time, goals, and specific needs like anxiety and sleep issues, the app ensures users can achieve their wellness goals. Additionally, it includes features for injury management, and strong community support to create a comprehensive and supportive wellness environment.
+                            div(class="w-full lg:w-1/2 px-4 rounded-2xl")
+                                img(class="rounded-4xl block lg:ml-auto", src="images/iPhone-15-Pro-png-1717502014016.webp", alt="")
+            section(class="relative bg-coolGray-50 overflow-hidden pt-16", x-data="{ activeSlide: 1, slideCount: 3 }")
+                div(class="container mx-auto px-4 pt-16", x-data="{ activeSlide: 1, slideCount: 4 }")
+                    div(class="flex flex-wrap -mx-4 items-center mb-8")
+                        div(class="w-full md:w-1/2 px-4 md:mb-0")
+                            h1(class="font-heading text-4xl md:text-4xl tracking-tighter mb-4") User research & personas
+                            p(class="text-md") I used surveys and interviews to gather more insights on user needs and problems.
+                            p(class="text-md") The interviews aim to understand users' motivations, goals, and experiences with online self-development and yoga tools, identifying key features, preferences, and limitations in current offerings. It also seeks to uncover desired improvements and the overall impact of these tools on users' personal growth and daily habits.
+                        div(class="w-full md:w-1/2 px-4")
+                            div(class="flex items-center justify-end")
+                                button(class="inline-flex h-16 sm:h-18 w-16 sm:w-18 mr-8 items-center justify-center text-black hover:text-white hover:bg-black border border-black rounded-full transition duration-200", x-on:click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount")
+                                    svg(width="27", height="27", viewbox="0 0 27 27", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M10.7051 7.12817L4.15732 13.6759L10.7051 20.2237", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M22.4941 13.6759H4.33949", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                button(class="inline-flex h-16 sm:h-18 w-16 sm:w-18 items-center justify-center text-black hover:text-white hover:bg-black border border-black rounded-full transition duration-200", x-on:click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1")
+                                    svg(width="27", height="27", viewbox="0 0 27 27", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M16.2949 7.12817L22.8427 13.6759L16.2949 20.2237", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M4.50586 13.6759H22.6605", stroke="currentColor", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                    div(class="overflow-hidden relative")
+                        div(class="flex transition-transform duration-500 ease-in-out", :style="'transform: translateX(-' + (activeSlide - 1) * 100 + '%)'", style="transform: translateX(-0%)")
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-full relative")
+                                            img(class="block h-1/3 w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/AlexRamos.png", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Alex Ramos
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 45
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Mechanical Engineer
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Family:
+                                                    p(class="inline-block") Single, one child
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Education:
+                                                    p(class="inline-block") Bachelor’s Degree in Mechanical Engineering
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Hometown:
+                                                    p(class="inline-block") Madrid, Spain
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg") "Structured programs and detailed tracking help me stay organized and focused on my wellness and spiritual goals."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Maintain Balance:
+                                                            |                               Integrate wellness and spiritual practices into a busy schedule to enhance balance and personal growth.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Consistent Routine:
+                                                            |                               Follow structured programs to stay organized and meet personal health and spiritual goals.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Monitor Progress:
+                                                            |                               Use detailed tracking to monitor progress and deepen spiritual development.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Disorganized Content:
+                                                            |                               Finds it challenging to locate relevant content due to disorganized suggestions.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Limited Tracking:
+                                                            |                               Current tools lack detailed tracking and integration of various practices.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Generic Guidance:
+                                                            |                               Finds generic group classes and some wellness apps misaligned with his skill level and needs.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Prefers Home Practice:
+                                                            |                               Chooses to practice at home due to work constraints and the need for flexibility.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Seeks Interaction:
+                                                            |                               Values community interaction and feedback from professional coaches.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Detailed Tracking:
+                                                            |                               Tools for detailed tracking and analysis of wellness and spiritual practices.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Structured Programs:
+                                                            |                               Comprehensive programs with progress tracking and feedback.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Motivational Elements:
+                                                            |                               Features like streaks, reminders, and progress tracking to keep her engaged.
+                                                            |                             
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-1/4")
+                                            img(class="block h-full w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/Shay.png", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Shay
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 52
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Yoga Instructor and Self-Development Coach
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Family:
+                                                    p(class="inline-block") Single, two children
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Education:
+                                                    p(class="inline-block") Certified Yoga Instructor and Self-Development Coach
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Hometown:
+                                                    p(class="inline-block") Mexico City, Mexico
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "Digital platforms have been a lifeline, allowing me to continue my practice and teaching, but they need to feel more connected and intuitive."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Continue Teaching and Learning:
+                                                            |                               Maintain her yoga and self-development practice through digital platforms.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Enhance Community Interaction:
+                                                            |                               Foster real-life social settings within digital tools to build meaningful connections.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Technical Issues:
+                                                            |                               Technical difficulties on platforms like Zoom can disrupt the teaching and learning experience.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Complex Interfaces:
+                                                            |                               Some digital tools are initially confusing and difficult to navigate, especially for teaching.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Lack of Social Interaction:
+                                                            |                               Existing self-development tools lack effective social interaction features.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Poor Audio Quality:
+                                                            |                               Subpar audio quality, particularly for music, diminishes the overall experience.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Prefers Live Interactions:
+                                                            |                               Enjoys live teaching and attending classes for a more engaging experience.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Community-Oriented:
+                                                            |                               Values social interaction and seeks tools that foster real-life community connections.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Enhanced Community Features:
+                                                            |                               Features that mimic real-life social interactions to build meaningful connections.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") User-Friendly Interface:
+                                                            |                               Simple and intuitive to use, minimizing cognitive load, especially for content providers.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") High-Quality Audio:
+                                                            |                               Improved audio quality, particularly for music, to enhance the immersive experience.
+                                                            |                             
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-1/4")
+                                            img(class="block h-full w-full rounded-tl-4xl rounded-br-4xl object-cover", src="images/LindaMich.png", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Linda Michaels
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 32
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Counselor
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Family:
+                                                    p(class="inline-block") In a relationship, no children
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Education:
+                                                    p(class="inline-block") Bachelor’s Degree in Counseling Psychology
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Hometown:
+                                                    p(class="inline-block") Dublin, Ireland
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "Balancing my work and personal life is essential, and integrating wellness practices helps me stay grounded and connected."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Maintain Balance:
+                                                            |                               Integrate wellness practices into a busy schedule to enhance balance and connection with the body.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Injury Management:
+                                                            |                               Ensure practices are safe and tailored to avoid aggravating any existing injuries.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Overcome Challenges:
+                                                            |                               Use personalized wellness programs to address specific personal and professional challenges.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Generic Content:
+                                                            |                               Finds group classes and some wellness apps too generic and often misaligned with her schedule or skill level.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Overly Talkative Instructors:
+                                                            |                               Dislikes instructors who talk too much during sessions.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Lack of Customization:
+                                                            |                               Needs more options for customizing guidance and practice modules, particularly for injury management.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Prefers Home Practice:
+                                                            |                               Chooses to practice at home due to work constraints and the need for flexibility.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Tech-Savvy:
+                                                            |                               Regularly uses digital tools and apps to manage wellness routines.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Customization and Personalization:
+                                                            |                               Tailored content and guidance to meet specific personal goals, challenges, and injury management.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Flexibility:
+                                                            |                               Options to adjust practices according to daily needs and moods.
+                                                            |                             
+                            | 
+                            div(class="flex-shrink-0 w-full")
+                                div(class="bg-coolGray-100 rounded-4xl overflow-hidden")
+                                    div(class="flex flex-wrap")
+                                        div(class="w-full lg:w-4/12 h-1/4")
+                                            img(class="block h-1/3 w-full rounded-tl-4xl rounded-br-4xl object-cover", src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzIzMzB8MHwxfHNlYXJjaHw1fHx3b21lbnxlbnwwfHx8fDE3MTc1ODEzMDV8MA&ixlib=rb-4.0.3&q=85&w=1920", alt="")
+                                            div(class="p-16")
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Name:
+                                                    p(class="inline-block") Jennifer Williams
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Age:
+                                                    p(class="inline-block") 25
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Occupation:
+                                                    p(class="inline-block") Student
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Family:
+                                                    p(class="inline-block") Single, no children
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Education:
+                                                    p(class="inline-block") Master's Degree in Biomedical Sciences
+                                                div(class="mb-2")
+                                                    h3(class="inline-block font-semibold") Hometown:
+                                                    p(class="inline-block") Cologne, Germany
+                                        div(class="w-full lg:w-8/12 self-center")
+                                            div(class="py-16 px-8 sm:px-16 max-w-2xl")
+                                                div(class="mb-8")
+                                                    p(class="inline-block text-lg")
+                                                        em "I need quick and effective tools to help me stay balanced and focused in my hectic life."
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Goals:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Improve Mental Well-being:
+                                                            |                               Integrate self-development practices into her daily routine to reduce stress and enhance mental clarity.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Time Efficiency:
+                                                            |                               Find methods that fit into her busy schedule without being overwhelming.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Consistency:
+                                                            |                               Establish a consistent practice that she can maintain long-term.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Frustrations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Unclear Guidance:
+                                                            |                               Confused about the correct usage of meditation and yoga techniques.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Frequent Paywalls:
+                                                            |                               Annoyed by constant requests for payments to access essential features.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Behavior:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Tech-Savvy:
+                                                            |                               Regularly uses apps and digital tools to manage her work and personal life.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Motivated by Progress:
+                                                            |                               Finds motivation in tracking progress and achieving streaks or milestones.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Short on Time:
+                                                            |                               Looks for quick, effective solutions that can be done in short bursts throughout the day.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Seeks Convenience:
+                                                            |                               Prefers intuitive and user-friendly interfaces that require minimal setup.
+                                                            |                             
+                                                div(class="mb-2")
+                                                    h3(class="font-semibold") Needs and Motivations:
+                                                    ul(class="list-disc ml-6")
+                                                        li
+                                                            span(class="font-medium") Clear Instructions:
+                                                            |                               Detailed guidance on how to properly perform meditation and yoga practices.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Short Sessions:
+                                                            |                               Brief, manageable sessions that can be easily incorporated into her daily routine.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Personalized Feedback:
+                                                            |                               Customized advice to ensure she is progressing correctly and effectively.
+                                                            |                             
+                                                        li
+                                                            span(class="font-medium") Affordable Access:
+                                                            |                               Reasonable pricing without constant upselling of features.
+                                                            |                             
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Ideation
+                        p(class="text-md md:w-1/2") During this phase I created problem-, hypothesis-, goal-statements and userjourneys. By combining this information with a competition audit, I selected 4 main ideas after a few cycles of using the Crazy 8's and HWW method.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Competitor audit
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Competitors’ Strengths
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    span(class="font-medium") Downdog
+                                                                    |                                   : Customization, high-quality visuals/audio, user-friendly.
+                                                                    |                                 
+                                                                span(class="font-medium") Meditation Steps
+                                                                |                                 : Step-by-step learning, adjustable lengths, digestible info.
+                                                                |                                 
+                                                                li
+                                                                    span(class="font-medium") Embodied Philosophy
+                                                                    |                                   : Deep educational content, unique niche, high-quality courses.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Wellness Coach
+                                                                    |                                   : Comprehensive programs, strong coaching focus.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Mighty Networks
+                                                                    |                                   : Robust community tools, user-friendly, supports wellness communities.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Calm
+                                                                    |                                   : Vast, premium content library, broad appeal, professional narrators.
+                                                                    |                                 
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Competitors’ Weaknesses
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    span(class="font-medium") Downdog
+                                                                    |                                   : Limited wellness focus, no injury consideration.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Meditation Steps
+                                                                    |                                   : Lacks variety, depth outside meditation.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Embodied Philosophy
+                                                                    |                                   : Niche, high cost, limited offerings.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Wellness Coach
+                                                                    |                                   : Overwhelming content, expensive coaching.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Mighty Networks
+                                                                    |                                   : Lacks dedicated wellness content.
+                                                                    |                                 
+                                                                li
+                                                                    span(class="font-medium") Calm
+                                                                    |                                   : High cost, overwhelming library, limited advanced yoga options.
+                                                                    |                                 
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Gaps
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Lack of integrated wellness practices.
+                                                                li Limited personalized holistic wellness plans.
+                                                                li Few apps offer a blend of mental, physical, spiritual development.
+                                                                li Lack of community-building features.
+                                                                li Insufficient injury prevention/recovery focus.
+                                                                li Lack of adaptive feedback for correct practice and program adjustments.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Opportunities
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Create a holistic app integrating yoga, meditation, injury prevention, wellness.
+                                                                li Offer personalized wellness plans based on user needs/preferences.
+                                                                li Develop comprehensive, customizable wellness programs.
+                                                                li Incorporate robust community features to boost engagement.
+                                                                li Include injury prevention/recovery features in yoga practices.
+                                                                li Implement adaptive feedback mechanisms for personalized adjustments.
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Goal statements
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 1 for Alex Ramos
+                                                            p
+                                                                |                                 Our app will offer
+                                                                |                                 
+                                                                span(class="font-medium") customizable wellness programs with tracking
+                                                                |                                 to help
+                                                                |                                 
+                                                                span(class="font-medium") busy professionals like Alex
+                                                                |                                 stay organized and meet goals. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") user engagement, plans created, and goal attainment feedback
+                                                                |                                 .
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 2 for Shay
+                                                            p
+                                                                |                                 Our app will provide
+                                                                |                                 
+                                                                span(class="font-medium") community interaction features
+                                                                |                                 for
+                                                                |                                 
+                                                                span(class="font-medium") yoga instructors like Shay
+                                                                |                                 to connect and build relationships. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") participation, social posts, and event participation
+                                                                |                                 .
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 3 for Lindoesh
+                                                            p
+                                                                |                                 Our app will offer
+                                                                |                                 
+                                                                span(class="font-medium") personalized wellness practices
+                                                                |                                 for
+                                                                |                                 
+                                                                span(class="font-medium") busy professionals like Lindoesh
+                                                                |                                 to maintain balance and avoid injuries. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") engagement with customization, injury help, satisfaction ratings, and tailored practice completion
+                                                                |                                 .
+                                                                |                               
+                                                        div(class="p-4")
+                                                            h2(class="text-lg font-medium mb-4") Goal Statement 4 for Jennifer
+                                                            p
+                                                                |                                 Our app will provide
+                                                                |                                 
+                                                                span(class="font-medium") clear, beginner friendly guidance and feedback opportunities
+                                                                |                                 for
+                                                                |                                 
+                                                                span(class="font-medium") office workers like Jennifer
+                                                                |                                 to boost confidence and routine adherence. Effectiveness will be measured by
+                                                                |                                 
+                                                                span(class="font-medium") engagement, feedback, and practice completion rates
+                                                                |                                 .
+                                                                |                               
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Chosen ideas
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="w-full grid grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Integrated and Personalized Wellness
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Combine yoga, meditation, and wellness practices to meet goals like anxiety reduction.
+                                                                li Develop programs for specific moods and mental states with user input for personalization.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Adaptive Programs
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Design wellness programs that evolve based on user feedback.
+                                                                li Track activity and provide personalized guidance.
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Progress Tracking
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Set weekly goals, track progress, and display streaks and statistics.
+                                                                li Use AI to detect behavior anomalies and suggest program adjustments.
+                                                        div(class="p-4")
+                                                            h2(class="text-lg font-medium mb-4") Supportive Experience
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Create communities for a supportive and social environment.
+                                                                li Enable experience sharing, Q&A sessions, and feedback collection.
+                                                                li Implement regular check-ins and program adjustments based on user input.
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Drawings
+                    div(class="flex gap-8")
+                        a(class="relative group block mb-8 rounded-4xl overflow-hidden", href="#")
+                            img(class="block w-full h-112 sm:h-135 object-cover", src="images/crazy8.jpg", alt="")
+                        |             
+                        a(class="relative group block mb-8 rounded-4xl overflow-hidden", href="#")
+                            img(class="block w-full h-112 sm:h-135 object-cover", src="images/crazy8-2.jpg", alt="")
+                        |             
+                        a(class="relative group block mb-8 rounded-4xl overflow-hidden", href="#")
+                            img(class="block w-full h-112 sm:h-135 object-cover", src="images/crazy8-3.jpg", alt="")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Lo-Fi Prototyping
+                        p(class="text-md w-1/2") During this phase I created a variety of user flows for different screens, creating a storyboard, sitemap and ultimately the wireframes that are connected together to form a prototype using Figma.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") User Flows
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container px-4")
+                                                    div(class="w-full")
+                                                        div(class="p-4 mb-4")
+                                                            p I created userflows for the following scenarios:
+                                                            ul(class="my-2 list-disc pl-6 space-y-2 text-sm")
+                                                                li Onboarding.
+                                                                li Start practice.
+                                                                li Check plan progress & statistics.
+                                                                li Engage with community.
+                                                            p You can find all userflows on Figma:
+                                                            a(class="mt-8 mb-6 group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/board/Tmq5HhTQ9sFs02WRkXCHdf/Flow-chart---Yoga-app?node-id=0-1&t=tSsi4SQltvd6BYVI-1", target="_blank")
+                                                                span(class="mr-4") View in Figma
+                                                                |                                 
+                                                                span(class="group-hover:rotate-45 transform transition duration-100")
+                                                                    svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                                        path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                                        path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                            img(class="rounded-xl mt-4 block w-full h-166 object-cover", src="images/userflows.png", alt="")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") Storyboard
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="p-4 mb-4")
+                                                        p I experimented with DALL-E to see if it could create compelling images for my storyboard. I would say the results are more compelling than my drawings.
+                                                        img(class="rounded-xl mt-4 block w-full h-166 object-cover", src="https://media.cleanshot.cloud/media/40052/ObVTEa2GMmAc5BYE0Z3QUZ1thJG8NX42otwlVUpP.jpeg?Expires=1717678676&Signature=Cip8vw~HK2IGyOvDaokOzSyJUc3bqa8FmY85D-Zt1XJFJe~Drf3r4EdyAxBAjxc0Bzhy6QXT59FaktaR5t8j4QyJ-tkpgDCQveD~dSKR6G-KrBFviNKKrUioIT9t6XeRYBd2akg3KBHHiFwAdIO6oVeDUcNe5KmFWp6TH7u0PX5z1a4ksDEJxXpeKXmYH3w9piFGBf7miEo53TiytQ8pcNZ~6RCS9PkwEdi8S2R00k1WV3iqBMCNNCh1HZuWy1r-4G-sW-gTuzydORyTUGHepERktFymjfMnBeL-dSUz9xD4axtFs0-BSSeoP3I9PcCKryxzS8aLl9Gqezu3G0UATQ__&Key-Pair-Id=K269JMAT9ZF4GZ", alt="")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") Sitemap
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="grid grid-cols-1 md:grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Home
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li Quick link to practice
+                                                                li Upcoming events from community
+                                                                li Goal progress
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Community
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    |                                   Groups
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Browse and join groups (e.g., Yoga for Anxiety, Morning Meditation)
+                                                                        li Group posts
+                                                                        li Upcoming group events
+                                                                li
+                                                                    |                                   Events
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Scheduled group sessions
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Practice
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li (Start now) Personalized recommendations
+                                                                li
+                                                                    |                                   Browse other yoga practices + favourites
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Search by mood/goal (e.g., anxiety, sleep, fatigue)
+                                                                        li Search by physical constraints
+                                                                li Downloads
+                                                                li
+                                                                    |                                   Create a practice
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li
+                                                                            |                                       Adjust settings
+                                                                            |                                       
+                                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                                li Experience level
+                                                                                li Preferred duration
+                                                                                li Favorite practices
+                                                                                li Physical constraints
+                                                                li
+                                                                    |                                   Post-Practice Feedback
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Rate sessions
+                                                                        li Provide feedback
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Profile
+                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                li
+                                                                    |                                   Wellness Goals
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Track progress
+                                                                        li Statistics/achievements
+                                                                li
+                                                                    |                                   Wellness Plans
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Personalized plan
+                                                                        li Adjust plans based on feedback
+                                                                li
+                                                                    |                                   Settings
+                                                                    |                                   
+                                                                    ul(class="list-disc pl-6 space-y-2")
+                                                                        li Personal information
+                                                                        li Change password
+                                                                        li Manage subscriptions
+                                                                        li Notification preferences
+                                                                        li
+                                                                            |                                       App Settings
+                                                                            |                                       
+                                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                                li Language and region
+                                                                                li Display preferences
+                                                                                li Privacy settings
+                                                                        li
+                                                                            |                                       FAQs
+                                                                            |                                       
+                                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                                li Common questions
+                                                                                li Troubleshooting
+                                                                        li
+                                                                            |                                       Contact Support
+                                                                            |                                       
+                                                                            ul(class="list-disc pl-6 space-y-2")
+                                                                                li Submit a ticket
+                                                                                li Live chat with support
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-lg md:text-2xl tracking-tighter") Paper wireframes
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="flex flex-wrap md:flex-nowrap gap-8 w-full")
+                                                    img(class="overflow-hidden rounded-xl mt-4 block w-full md:w-1/2 h-166 object-cover", src="images/paperWireframesYogaHub1.jpg", alt="")
+                                                    img(class="overflow-hidden rounded-xl mt-4 block w-full md:w-1/2 h-166 object-cover", src="images/paperWireframesYogaHub2.jpg", alt="")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Wireframes
+                    img(class="rounded-5xl block w-full h-full object-cover", src="images/lofiYogahu.png", alt="Wireframes")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-2xl sm:text-4xl mb-4") Lo-Fi prototype
+                                    p(class="mb-10") After sketching wireframes on paper and turning them into digital ones in Figma, they got glued together as Lo-Fi prototype using Figma as well.
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=0-1&t=I8WwZ6cbVWpj6PkQ-1", target="_blank")
+                                        span(class="mr-4") View Wireframes
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                    |                   
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black", href="https://www.figma.com/proto/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=9-1747&t=I8WwZ6cbVWpj6PkQ-0&scaling=min-zoom&page-id=0%3A1", target="_blank")
+                                        span(class="mr-4") View Prototype
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                            div(class="w-full h-150 lg:w-1/4 m-auto")
+                                div(style="padding:218.13% 0 0 0;position:relative;")
+                                    iframe(src="https://player.vimeo.com/video/954007937?badge=0&autopause=0&player_id=0&app_id=58479", frameborder="0", allow="autoplay; fullscreen; picture-in-picture; clipboard-write", style="position:absolute;top:0;left:0;width:100%;height:100%;", title="Yoga Circle Lofi-prototype", data-ready="true")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-xl mx-auto lg:max-w-none")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter mb-4") Usability study
+                        p(class="text-md w-1/2") During this phase I did a moderated usability study to discover what can be improved and if user's are able to use the main features of the app without much difficulty.
+                        div(class="flex flex-wrap -mx-4")
+                            div(class="w-full px-4 mb-12 lg:mb-0")
+                                div(class="max-w-full")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Affinity diagram
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    p All results from the usability study were put on notes and divided into themes by creating an affinity diagram.
+                                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/board/bX1MOeKfDQpXH4d61kbdNn/Affinity-yoga-app?node-id=0-1&t=hjRIc4Ig21gzHKGE-1", target="_blank")
+                                                        span(class="mr-4") View in Figma
+                                                        |                             
+                                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                    img(class="rounded-xl mt-4 block w-full h-166 object-fit", src="images/affinityDiagramYogaApp.png", alt="")
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Pattern Identification
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4")
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Creating a Practice
+                                                        p 5 out of 5 participants had difficulty creating a new practice. Issues included finding the button, navigating the steps, and understanding options.
+                                                        p(class="font-medium") Solution: Simplify and make the process more intuitive with an onboarding tutorial.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Navigating Back
+                                                        p 3 out of 5 participants were confused about how to navigate back after selecting a level.
+                                                        p(class="font-medium") Solution: Improve the clarity and accessibility of the navigation flow.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Plan Feature Visibility
+                                                        p 5 out of 5 participants found the plan feature difficult to locate or unclear in purpose.
+                                                        p(class="font-medium") Solution: Enhance the visibility and clarity of the plan feature to ensure users understand its value.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Event Management
+                                                        p 3 out of 5 participants had issues managing their events, including finding registered events and canceling them.
+                                                        p(class="font-medium") Solution: Improve the event management interface to make it easier to access and manage events.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Commenting and Communication
+                                                        p 3 out of 5 participants were unsure about how to comment or start a chat.
+                                                        p(class="font-medium") Solution: Make commenting and communication features more prominent and user-friendly.
+                                                    div(class="p-4")
+                                                        h2(class="text-lg font-medium mb-4") Simplifying Input Methods
+                                                        p 2 out of 5 participants preferred simpler input methods for ratings or check-ins.
+                                                        p(class="font-medium") Solution: Simplify input methods to enhance user convenience and engagement.
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Insights & Priority
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="grid grid-cols-1 md:grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 0 (P0)
+                                                            h3(class="text-md font-medium mb-2") Creating a Practice
+                                                            span(class="font-medium") Insight:
+                                                            |                               Users need a more intuitive and guided process for creating a new practice, possibly through an onboarding tutorial.
+                                                            |                               
+                                                            p
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 This is essential for the main user flow as creating a practice is a primary function of the app. Without clarity and ease in this process, users cannot fully utilize the app's core feature.
+                                                                |                               
+                                                            h3(class="text-md font-medium mt-4 mb-2") Plan Feature Visibility and Clarity
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need better visibility and explanation of the plan feature to understand its value and usage.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 The plan feature is hidden and unclear, which can mislead users about its purpose and importance, impacting their overall experience and functionality of the app.
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 1 (P1)
+                                                            h3(class="text-md font-medium mb-2") Navigating Back
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need clearer navigation cues to easily go back when selecting options.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 Proper navigation is crucial for the app to function properly and ensure users can complete tasks without frustration. This prevents users from feeling stuck or misled.
+                                                                |                               
+                                                            h3(class="text-md font-medium mt-4 mb-2") Event Management
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need a more straightforward way to view and manage their registered events and cancellations.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 While not as critical as the core functions, managing events efficiently enhances user satisfaction and engagement, addressing a significant pain point.
+                                                                |                               
+                                                            h3(class="text-md font-medium mt-4 mb-2") Commenting and Communication
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need a more prominent and user-friendly interface for commenting and initiating chats.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 To be able to create posts is important for user interaction and community building, improving the overall user experience.
+                                                                |                               
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Priority 2 (P2)
+                                                            h3(class="text-md font-medium mb-2") Simplifying Input Methods
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more convenient and efficient input methods for ratings and mood check-ins, such as single-click buttons or scales.
+                                                                |                               
+                                                            p
+                                                                span(class="font-medium") Reason:
+                                                                |                                 Simplifying input methods can enhance user convenience and engagement but is not as urgent as ensuring the main functionalities and navigation are addressed first.
+                                                                |                               
+                                    button(class="group block text-left w-full px-0", x-data="{ accordion: false }", x-on:click="accordion = !accordion")
+                                        div(class="flex w-1/2 justify-between items-center py-6 border-b border-coolGray-300")
+                                            h3(class="font-heading text-xl md:text-2xl tracking-tighter") Before & After
+                                            span(:class="{'rotate-180': accordion, 'rotate-0': !accordion }", class="inline-block transform rotate-0")
+                                                span(class="flex-shrink-0 ml-4")
+                                                    svg(width="26", height="26", viewbox="0 0 26 26", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="M19.4961 10.4346L12.9483 3.88682L6.40058 10.4346", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                        path(d="M12.9453 22.2246L12.9453 4.06996", stroke="black", stroke-width="1.61806", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        div(x-ref="container", :style="accordion ? 'height: ' + $refs.container.scrollHeight + 'px' : ''", class="overflow-hidden h-0 duration-500", style="")
+                                            div(class="max-w-full")
+                                                div(class="container mx-auto px-4 py-8")
+                                                    div(class="grid grid-cols-1 md:grid-cols-2 gap-4")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Creating a Practice
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need a more intuitive and guided process for creating a new practice, possibly through an onboarding tutorial.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Make create practice button more obvious and create an onboarding process that guides the user more intuitively instead of clicking back & forth between every practice setting.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/createPracticeBefore2.gif", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") Afer
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/createPracticeAfter.gif", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Plan Feature Visibility and Clarity
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need better visibility and explanation of the plan feature to understand its value and usage.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Add it to the general nav bar. Also make the feature more comprehensive so that it's integrated with a clear program. When starting a program I also created a more intuitive onboarding process.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/planBefore.gif", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/planAfter.gif", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Navigating Back
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need clearer navigation cues to easily go back when selecting options.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Add back buttons.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/navBefore.gif", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/navAfter.gif", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Event Management
+                                                            span(class="font-medium") Insight:
+                                                            |                               Users need a more straightforward way to view and manage their registered events and cancellations.
+                                                            |                               
+                                                            p
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Previously it was not clear to which event a user was registered and how one could unenroll. Now I added a clear tag to show the events that one is registered to. I also added an extra screen for when you are registered and want to unenroll.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/eventManageBefore.gif", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/eventManageAfter.gif", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Commenting and Communication
+                                                            span(class="font-medium") Insight:
+                                                            |                               Users need a more prominent and user-friendly interface for commenting and initiating chats.
+                                                            |                               
+                                                            p
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Added text input below the comments to show the user that they can send a message.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/commentBefore.jpeg", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/commentAfter.jpeg", alt="")
+                                                        div(class="p-4 mb-4")
+                                                            h2(class="text-lg font-medium mb-4") Simplifying Input Methods
+                                                            p
+                                                                span(class="font-medium") Insight:
+                                                                |                                 Users need more convenient and efficient input methods for ratings and mood check-ins, such as single-click buttons or scales.
+                                                                |                               
+                                                            p(class="mt-4")
+                                                                span(class="font-medium") Solution:
+                                                                |                                 Change text input to multiple single-click buttons that also indicate the scale.
+                                                                |                               
+                                                            div(class="flex gap-4")
+                                                                div
+                                                                    p(class="font-medium my-4") Before
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/moodBefore.jpeg", alt="")
+                                                                div
+                                                                    p(class="font-medium my-4") After
+                                                                    img(class="rounded-xl mt-4 block w-full h-100 object-fit", src="images/moodAfter.jpeg", alt="")
+                                                    a(class="p-4 ml-8 group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=156-7534&t=GpEUZBajhtktF9RY-1", target="_blank")
+                                                        span(class="mr-4") View in Figma
+                                                        |                             
+                                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Mockups
+                    img(class="rounded-5xl block w-full h-full object-cover", src="images/hifiYogahub.png", alt="Wireframes")
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-2xl sm:text-4xl mb-4") Hi-Fi prototype
+                                    p(class="mb-10") After implementing all improvements in our wireframes, it was time to finally create the mockups and Hi-Fi prototype.
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black mr-12", href="https://www.figma.com/design/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=229-23587&t=I8WwZ6cbVWpj6PkQ-1", target="_blank")
+                                        span(class="mr-4") View Mockups
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                    |                   
+                                    a(class="group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black", href="https://www.figma.com/proto/XKomMYGGujnVFs77YayQrF/Yoga-app?node-id=229-23588&t=I8WwZ6cbVWpj6PkQ-0&scaling=min-zoom&page-id=229%3A23587&starting-point-node-id=229%3A24346", target="_blank")
+                                        span(class="mr-4") View Prototype
+                                        |                     
+                                        span(class="group-hover:rotate-45 transform transition duration-100")
+                                            svg(width="11", height="11", viewbox="0 0 11 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="M9.5 1.5L1.5 9.5", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                                path(d="M9.5 8.83571V1.5H2.16429", stroke="black", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                            div(class="w-full h-150 lg:w-1/4 m-auto")
+                                div(style="padding:228% 0 0 0;position:relative;")
+                                    iframe(src="https://player.vimeo.com/video/954121842?badge=0&autopause=0&player_id=0&app_id=58479", frameborder="0", allow="autoplay; fullscreen; picture-in-picture; clipboard-write", style="position:absolute;top:0;left:0;width:100%;height:100%;", title="HiFiPrototype yoga app")
+            section(class="bg-coolGray-50 pt-20")
+                div(class="relative py-36 bg-black overflow-hidden")
+                    img(class="absolute top-0 left-0 w-full h-full object-cover", src="images/kike-vega-F2qh3yjz6Jk-unsplash.jpg", alt="")
+                    div(class="relative container mx-auto px-4")
+                        div(class="lg:max-w-3xl mx-auto text-center")
+                            h1(class="font-heading text-5xl sm:text-8xl xl:text-10xl text-white tracking-tighter mb-14") Thanks for reading!
+                            a(class="group inline-flex mb-3 sm:mb-0 sm:mr-4 py-5 px-8 text-black hover:text-white leading-none items-center justify-center bg-white hover:bg-green-400 rounded-full transition duration-150", href="index.html")
+                                span(class="mr-2.5") More work
+                                |                 
+                                span(class="group-hover:rotate-45 transform transition duration-75")
+                                    svg(width="10", height="11", viewbox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9 1.5L1 9.5", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M9 8.83571V1.5H1.66429", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
