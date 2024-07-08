@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mark The UX - Linda Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="antialiased bg-body text-body font-body">
+    <div class="">
+                
+      <section x-data="{ mobileNavOpen: false }" class=""><nav class="bg-coolGray-50"><div class="container mx-auto px-4">
+            <div class="flex h-24 items-center">
+              <a class="inline-block" href="#">
+                <img class="h-6" src="images/MarktheUX.png" alt=""></a>
+              <button x-on:click="mobileNavOpen = !mobileNavOpen" class="lg:hidden py-1 ml-auto">
+                <svg width="44" height="16" viewbox="0 0 44 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="2" rx="1" fill="black"></rect><rect y="14" width="44" height="2" rx="1" fill="black"></rect></svg></button>
+              <div class="hidden lg:flex ml-auto mr-12 items-center"><a class="inline-block hover:underline mr-10" href="index.html">Projects</a><a class="inline-block hover:underline mr-10" href="about.html">About</a></div>
+            </div>
+          </div>
+        </nav><div :class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}" class="fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50 hidden">
+          <div x-on:click="mobileNavOpen = !mobileNavOpen" class="fixed inset-0 bg-gray-800 opacity-50"></div>
+          <nav class="relative flex flex-col py-6 px-10 w-full h-full bg-coolGray-50 overflow-y-auto"><div class="flex mb-auto items-center">
+              <a class="inline-block mr-auto" href="#">
+                <img class="h-4" src="images/MarktheUX.png" alt=""></a>
+              <button x-on:click="mobileNavOpen = !mobileNavOpen">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6L18 18" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            </div>
+            <div class="py-12 mb-auto">
+              <ul class="flex-col"><li class="mb-6"><a class="inline-block hover:underline text-black" href="#">Projects</a></li>
+                <li class="mb-6"><a class="inline-block hover:underline text-black" href="#">About</a></li>
+              </ul></div>
+          </nav></div>
+      </section>
+                
+      <section class="py-12 md:py-20 bg-coolGray-50 "><div class="container mx-auto px-4">
+          <div class="max-w-lg lg:max-w-6xl mx-auto">
+            <div class="flex flex-wrap -mx-4 items-center">
+              <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
+                <div class="max-w-md">
+                  <h2 class="lg:max-w-md text-4xl sm:text-4xl mb-8">Linda Lunardi Therapy</h2>
+                  <p class="text-lg mb-2 font-medium">Challenge</p>
+                  <p class="text-md mb-8">To create a website for a psychotherapist that attracts potential clients.</p>
+                  <p class="text-lg mb-2 font-medium">Solution</p>
+                  <p class="text-md">I make a responsive website using Shuffle.dev stacked with Tailwind CSS. I did the branding and theming and tried to capture all information that a potential client might be looking fir.</p>
+                  <a class="mt-8 group inline-flex items-center leading-none font-medium pb-2 border-b-2 border-black" href="https://linda-lunardi.netlify.app" target="_blank">
+                    <span class="mr-4">View Website</span>
+                    <span class="group-hover:rotate-45 transform transition duration-100">
+                      <svg width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 1.5L1.5 9.5" stroke="black" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.5 8.83571V1.5H2.16429" stroke="black" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                  </a>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-4 rounded-2xl">
+                <img class="rounded-4xl block lg:ml-auto" src="images/lindaMac.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+                
+      <section class="bg-coolGray-50 pt-20 "><div class="relative py-36 bg-black overflow-hidden">
+          <img class="absolute top-0 left-0 w-full h-full object-cover" src="images/CTAbackground2.jpg" alt=""><div class="relative container mx-auto px-4">
+            <div class="lg:max-w-3xl mx-auto text-center">
+              <h1 class="font-heading text-5xl sm:text-8xl xl:text-10xl text-gray-700 tracking-tighter mb-14">Thanks for reading!</h1>
+              <a class="group inline-flex mb-3 sm:mb-0 sm:mr-4 py-5 px-8 text-black hover:text-white leading-none items-center justify-center bg-white hover:bg-green-400 rounded-full transition duration-150" href="index.html">
+                <span class="mr-2.5">More work</span>
+                <span class="group-hover:rotate-45 transform transition duration-75">
+                  <svg width="10" height="11" viewbox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1.5L1 9.5" stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 8.83571V1.5H1.66429" stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</body>
+</html>
+
