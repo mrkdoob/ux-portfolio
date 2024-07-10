@@ -1,0 +1,87 @@
+html(lang="en")
+    head
+        title Mark The UX - Therapy App
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="preconnect", href="https://fonts.gstatic.com")
+        link(href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="css/tailwind/tailwind.min.css")
+        link(rel="icon", type="image/png", sizes="32x32", href="shuffle-for-tailwind.png")
+        script(src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js", defer="defer")
+    body(class="antialiased bg-body text-body font-body")
+        div(class="")
+            section(x-data="{ mobileNavOpen: false }", class="")
+                nav(class="bg-coolGray-50")
+                    div(class="container mx-auto px-4")
+                        div(class="flex h-24 items-center")
+                            a(class="inline-block", href="#")
+                                img(class="h-6", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen", class="lg:hidden py-1 ml-auto")
+                                svg(width="44", height="16", viewbox="0 0 44 16", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    rect(width="44", height="2", rx="1", fill="black")
+                                    rect(y="14", width="44", height="2", rx="1", fill="black")
+                            div(class="hidden lg:flex ml-auto mr-12 items-center")
+                                a(class="inline-block hover:underline mr-10", href="index.html") Projects
+                                a(class="inline-block hover:underline mr-10", href="about.html") About
+                div(:class="{'block': mobileNavOpen,'hidden': !mobileNavOpen}", class="fixed top-0 left-0 bottom-0 w-5/6 max-w-md z-50 hidden")
+                    div(x-on:click="mobileNavOpen = !mobileNavOpen", class="fixed inset-0 bg-gray-800 opacity-50")
+                    nav(class="relative flex flex-col py-6 px-10 w-full h-full bg-coolGray-50 overflow-y-auto")
+                        div(class="flex mb-auto items-center")
+                            a(class="inline-block mr-auto", href="#")
+                                img(class="h-4", src="images/MarktheUX.png", alt="")
+                            button(x-on:click="mobileNavOpen = !mobileNavOpen")
+                                svg(width="24", height="24", viewbox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M6 18L18 6M6 6L18 18", stroke="#111827", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                        div(class="py-12 mb-auto")
+                            ul(class="flex-col")
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") Projects
+                                li(class="mb-6")
+                                    a(class="inline-block hover:underline text-black", href="#") About
+            section(class="py-12 md:py-20 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="max-w-lg lg:max-w-6xl mx-auto")
+                        div(class="flex flex-wrap -mx-4 items-center")
+                            div(class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0")
+                                div(class="max-w-md")
+                                    h2(class="lg:max-w-md text-4xl sm:text-4xl mb-8") SaQure
+                                    p(class="text-lg mb-2 font-medium") Challenge
+                                    p(class="text-md mb-8") Create an on-demand product that meets both customer and business needs. My task was to create a user friendly features and include an on-boarding experience where marketing tools such as coupons, loyalty-discounts, and credit are embedded into the product without overwhelming the user.
+                                    p(class="text-lg mb-2 font-medium") Solution
+                                    p(class="text-md") I designed intuitive product features and structured the information in a way where the customer would only get exposed to the neccesary information when needed and relevant. I collaborated with an UI designer to translate the requirements into mock-ups. Below you will find some of the features.
+                            div(class="w-full lg:w-1/2 px-4 rounded-2xl")
+                                img(class="rounded-4xl block lg:ml-auto", src="images/saqure-landing-mac.png", alt="")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Ordering a massage
+                    div(class="p-8 rounded-3xl mx-auto block w-full h-full bg-white")
+                        img(class="w-full h-full object-fit", src="images/order-massage-ios.jpg", alt="Wireframes")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Gift voucher
+                    img(class="rounded-3xl block w-full h-full object-cover", src="images/gift-voucher-ios.jpg", alt="Wireframes")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Confirm booking
+                    img(class="rounded-3xl block w-full h-full object-cover", src="images/confirm-booking-ios.jpg", alt="Wireframes")
+            section(class="py-4 md:py-8 bg-coolGray-50")
+                div(class="container mx-auto px-4")
+                    div(class="inline-flex w-full mx-auto items-start text-center mb-8")
+                        h1(class="font-heading text-2xl md:text-4xl tracking-tighter pt-4") Feedback
+                    img(class="rounded-3xl block w-full h-full object-cover", src="images/rate-massage-ios.jpg", alt="Wireframes")
+            section(class="bg-coolGray-50 pt-20")
+                div(class="relative py-36 bg-black overflow-hidden")
+                    img(class="absolute top-0 left-0 w-full h-full object-cover", src="images/CTAbackground2.jpg", alt="")
+                    div(class="relative container mx-auto px-4")
+                        div(class="lg:max-w-3xl mx-auto text-center")
+                            h1(class="font-heading text-5xl sm:text-8xl xl:text-10xl text-gray-700 tracking-tighter mb-14") Thanks for reading!
+                            a(class="group inline-flex mb-3 sm:mb-0 sm:mr-4 py-5 px-8 text-black hover:text-white leading-none items-center justify-center bg-white hover:bg-green-400 rounded-full transition duration-150", href="index.html")
+                                span(class="mr-2.5") More work
+                                |                 
+                                span(class="group-hover:rotate-45 transform transition duration-75")
+                                    svg(width="10", height="11", viewbox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M9 1.5L1 9.5", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
+                                        path(d="M9 8.83571V1.5H1.66429", stroke="currentColor", stroke-width="1.3", stroke-miterlimit="10", stroke-linecap="round", stroke-linejoin="round")
